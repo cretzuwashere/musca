@@ -31,7 +31,6 @@ public class Musca2 extends Applet implements Runnable, MouseListener {
         try {
             generatorMusteVii = new GeneratorMusteVii(new URL(getCodeBase(), "musca.png"));
             generatorMusteMoarte = new GeneratorMusteMoarte(new URL(getCodeBase(), "muscamoarta.png"));
-            System.out.println(getCodeBase());
             generatorMusteVii();
             generatorMusteMoarte();
         } catch (IOException ex) {
