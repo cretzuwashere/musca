@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
 
-interface IMusca {
+public interface IMusca {
     public Point getPozitie();
     public void setPozitie(Point x);
     public Image getPoza();

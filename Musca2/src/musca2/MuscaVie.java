@@ -18,13 +18,13 @@ public class MuscaVie extends Musca {
         _strategie = null;
     }
 
+    @Override
     public void aplicaStrategie(Dimension boundaries) {
         if (_strategie == null) {
             GeneratorStrategii x = new GeneratorStrategii();
             _strategie = x.genereazaStrategie(this, boundaries);
         }
         _strategie.aplicaStrategie();
-
     }
 
     public Boolean getProaspatMoarta() {
