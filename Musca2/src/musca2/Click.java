@@ -8,32 +8,37 @@ public class Click {
 
     private MouseEvent _me;
     private ArrayList<MuscaVie> _liStaMusteVii;
-    private ArrayList<Musca> _musteProaspatMoarte;
+    private ArrayList<IMusca> _musteProaspatMoarte;
     private ArrayList<MuscaMoarta> _listaMusteMoarte;
     private GeneratorMusteVii _generatorMusteVii;
     private GeneratorMusteMoarte _generatorMusteMoarte;
+    private Boolean _ratat = true;
 
     public Click(MouseEvent me, ArrayList<MuscaVie> liStaMuste, GeneratorMusteVii generator, ArrayList<MuscaMoarta> listaMusteMoarte, GeneratorMusteMoarte generatorMusteMoarte) {
         _me = me;
         _liStaMusteVii = liStaMuste;
         _generatorMusteVii = generator;
         _listaMusteMoarte = listaMusteMoarte;
-        _musteProaspatMoarte = new ArrayList<Musca>();
+        _musteProaspatMoarte = new ArrayList<>();
         _generatorMusteMoarte = generatorMusteMoarte;
     }
 
     public void evenimentClick() throws IOException {
+        _ratat = true;
         if (_me.getButton() == 1) {
             for (MuscaVie musca : _liStaMusteVii) {
                 if (_me.getX() >= musca.getPozitie().x && _me.getX() <= musca.getPozitie().x + 50) {
                     if (_me.getY() >= musca.getPozitie().y && _me.getY() <= musca.getPozitie().y + 50) {
                         musca.setProaspatMoarta();
-                    } else {
-                        System.out.println("Ai ratat");
+                        _ratat = false;
                     }
-                } else {
-                    System.out.println("Ai ratat");
                 }
+            }
+            if (_ratat) {
+                System.out.println("Ai ratat!");
+            }
+            else{
+                System.out.println("Ai nimerit!");
             }
         }
         if (_me.getButton() == 3) {
@@ -57,7 +62,7 @@ public class Click {
                 }
             }
             if (_musteProaspatMoarte != null) {
-                for (Musca musca : _musteProaspatMoarte) {
+                for (IMusca musca : _musteProaspatMoarte) {
                     _liStaMusteVii.remove(musca);
                 }
             }

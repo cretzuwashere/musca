@@ -1,5 +1,6 @@
 package musca2;
 
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
 
@@ -19,6 +20,10 @@ public class MuscaMoarta extends Musca {
 
     public Integer getDataMortii() {
         return _dataMortii;
+    }
+
+    @Override
+    public void aplicaStrategie(Dimension boundaries) {
     }
 
 }

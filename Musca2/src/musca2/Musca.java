@@ -1,9 +1,10 @@
 package musca2;
 
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
 
-public class Musca {
+public abstract class Musca implements IMusca{
 
     protected Image _musca;
     protected Point _pozitie;
@@ -35,4 +36,5 @@ public class Musca {
     public void setOrientare(Orientare x) {
         _orientare = x;
     }
+    public abstract void aplicaStrategie(Dimension boundaries);
 }
